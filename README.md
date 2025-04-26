@@ -1,4 +1,4 @@
-# ST Themer 🎨
+![Banner](https://raw.githubusercontent.com/Sarvamm/st-themer/refs/heads/main/assets/logo.png)
 
 **ST Themer** is a lightweight and interactive Streamlit app that allows you to visually customize your app's theme and save those themes as reusable `.toml` presets.
 
@@ -13,7 +13,7 @@
   - Text color
 - ⚡ Instant theme application using Streamlit's `.streamlit/config.toml`
 - 💾 Save your custom themes to the `Saved_Themes/` directory
-- 📁 Organized project layout with support for multiple pages and assets
+- 📁 Load created themes
 
 ---
 
