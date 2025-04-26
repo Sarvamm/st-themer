@@ -28,7 +28,7 @@ tx = con4.color_picker("Text", tx)
 con4.markdown(f"The current color is {tx}")
 
 
-k1, k2 = st.columns([1,4])
+k1, k2, k3 = st.columns([1,1,1])
 
 if k1.button("Apply"):
     data["theme"]["primaryColor"] = pr
@@ -56,8 +56,28 @@ def save_preset():
 
         st.success(f"Theme saved at  Saved_Themes/{preset_name}/config.toml")
 
+@st.dialog("Load Preset")
+def load_preset():
+    selected_preset = st.selectbox("Select Preset", os.listdir("Saved_Themes"))
+    if st.button("Load"):
+
+        with open(f"Saved_Themes/{selected_preset}/config.toml", "r") as f:
+            preset_data = toml.load(f)
+        data["theme"].update(preset_data)
+        with open(".streamlit/config.toml", "w") as f:
+            toml.dump(data, f)
+        st.success(f"Theme loaded from {selected_preset}")
+        st.rerun()
+
+
+
 if k2.button("Save preset"):
     save_preset()
+
+#load existing theme
+if k3.button("Load Preset"):
+    load_preset()
+    
 
 st.divider()
 
