@@ -2,7 +2,7 @@ import streamlit as st
 from streamlit_extras.buy_me_a_coffee import button
 
 version: str = "0.0.1"
-logo: str = "https://github.com/Sarvamm/st-themer/blob/main/assets/logo.png"
+logo: str = "./assets/logo.png"
 coffee_username: str = "astrayn"
 
 #Page setup
