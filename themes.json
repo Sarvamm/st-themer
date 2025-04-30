@@ -1,0 +1,44 @@
+{
+    "ST-Themer": {
+        "primaryColor": "#e2da07",
+        "backgroundColor": "#031c3d",
+        "secondaryBackgroundColor": "#08459a",
+        "textColor": "#ffffff"
+    },
+    "Woods": {
+        "primaryColor": "#14d8a7",
+        "backgroundColor": "#001616",
+        "secondaryBackgroundColor": "#032c2d",
+        "textColor": "#d8e7e8"
+    },
+    "Watermelon": {
+        "primaryColor": "#d8144e",
+        "backgroundColor": "#001616",
+        "secondaryBackgroundColor": "#032c2d",
+        "textColor": "#d8e7e8"
+    },
+    "Aventador": {
+        "primaryColor": "#d8144e",
+        "backgroundColor": "#001616",
+        "secondaryBackgroundColor": "#032c2d",
+        "textColor": "#d8e7e8"
+    },
+    "Rose-Pine": {
+        "primaryColor": "#eb6f92",
+        "backgroundColor": "#191724",
+        "secondaryBackgroundColor": "#1f1d2e",
+        "textColor": "#e0def4"
+    },
+    "Solarised": {
+        "primaryColor": "#93a1a1",
+        "backgroundColor": "#002b36",
+        "secondaryBackgroundColor": "#073642",
+        "textColor": "#fdf6e3"
+    },
+    "Noir": {
+        "primaryColor": "#b799a2",
+        "backgroundColor": "#0c0c0c",
+        "secondaryBackgroundColor": "#222323",
+        "textColor": "#f1e7e7"
+    }
+}

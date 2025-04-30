@@ -2,6 +2,7 @@ import streamlit as st
 import time
 from datetime import datetime, time as dt_time
 import toml
+import json
 
 data = toml.load(".streamlit/config.toml")
 pr, bg, sb, tx = (
@@ -10,6 +11,10 @@ pr, bg, sb, tx = (
     data["theme"]["secondaryBackgroundColor"],
     data["theme"]["textColor"],
 )
+
+if "theme_dict" not in st.session_state:
+    st.session_state['theme_dict'] = json.load(open('themes.json', "r"))
+
 
 st.header("Theme Customization")
 st.markdown("Customize the theme colors of your Streamlit app.")
@@ -32,9 +37,9 @@ tx = con4.color_picker("Text", tx)
 con4.markdown(f"The current color is {tx}")
 
 
-k1, k2 = st.columns([1, 1])
+k1, k2, k3, k4 = st.columns([1, 1, 1, 1])
 
-if k1.button("Apply"):
+def apply(pr, bg, sb, tx) -> None:
     data["theme"]["primaryColor"] = pr
     data["theme"]["backgroundColor"] = bg
     data["theme"]["secondaryBackgroundColor"] = sb
@@ -42,27 +47,74 @@ if k1.button("Apply"):
     with open(".streamlit/config.toml", "w") as f:
         toml.dump(data, f)
     st.rerun()
+    return None
+        
+        
+if k1.button("Apply", key='main_page'):
+    apply(pr, bg, sb, tx)
+    
 
 
-@st.dialog("Save Preset")
-def save_preset() -> None:
+@st.dialog("Download")
+def download_preset() -> None:
     try:
-        st.download_button("Download Config", open(".streamlit/config.toml", "w"))
-        st.success("Downloaded")
+        if st.download_button("Download Config", open(".streamlit/config.toml", "r"), file_name="config.toml"):
+            st.success("Downloaded")
     except Exception as e:
         st.error(str(e))
 
     return None
 
 
+@st.dialog("Save Preset")
+def save_preset() -> None:
+
+    preset_name : str = st.text_input("Enter preset name")
+    try:
+        if st.button("save", key='save_preset_dialog'):
+            st.session_state["theme_dict"][preset_name]  =  {
+                    "primaryColor" : pr,
+                    "backgroundColor" : bg,
+                    "secondaryBackgroundColor" : sb,
+                    "textColor" : tx
+            }           
+            
+            st.success("Theme saved successfully!")
+    except Exception as e:
+        st.error(str(e))
+    return None
+
+@st.dialog("Load Preset")
+def load_preset() -> None:
+    theme_list = list(st.session_state["theme_dict"].keys())
+    chosen = st.selectbox("Select a theme you want to apply", theme_list)
+    
+    if st.button('Apply', key='load_preset_dialog'):
+        apply(
+            pr=st.session_state["theme_dict"][chosen]['primaryColor'],
+            bg=st.session_state["theme_dict"][chosen]['backgroundColor'],
+            sb=st.session_state["theme_dict"][chosen]['secondaryBackgroundColor'],
+            tx=st.session_state["theme_dict"][chosen]['textColor']
+        )
+        
+    
+    
+
 if k2.button("Save preset"):
     save_preset()
+    
+if k3.button("Load preset"):
+    load_preset()
+    
+if k4.button("Download preset"):
+    download_preset()
 
 st.divider()
 
 
 def main():
     # Main content based on selection
+    st.subheader("Here's how streamlit widgets will look like:")
     input_widgets()
     basic_widgets()
     status_elements()

@@ -1,7 +1,7 @@
 import streamlit as st
 from streamlit_extras.buy_me_a_coffee import button
 
-version: str = "0.0.2"
+version: str = "0.0.3"
 logo: str = "./assets/logo.png"
 coffee_username: str = "astrayn"
 
