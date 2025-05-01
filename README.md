@@ -58,10 +58,11 @@ theme-generator/
 
 ---
 ## Screenshots
-![one](https://raw.githubusercontent.com/Sarvamm/st-themer/refs/heads/main/assets/Snapshot_1.png)
-![one](https://raw.githubusercontent.com/Sarvamm/st-themer/refs/heads/main/assets/Snapshot_2.png)
-![one](https://raw.githubusercontent.com/Sarvamm/st-themer/refs/heads/main/assets/Snapshot_3.png)
-![one](https://raw.githubusercontent.com/Sarvamm/st-themer/refs/heads/main/assets/Snapshot_4.png)
+![one](https://github.com/Sarvamm/st-themer/blob/main/assets/Snapshot_1.PNG)
+![one](https://github.com/Sarvamm/st-themer/blob/main/assets/Snapshot_2.PNG)
+![one](https://github.com/Sarvamm/st-themer/blob/main/assets/Snapshot_3.PNG)
+![one](https://github.com/Sarvamm/st-themer/blob/main/assets/Snapshot_4.PNG)
+
 
 
 
