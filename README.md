@@ -57,24 +57,12 @@ theme-generator/
 ```
 
 ---
+## Screenshots
+![one](https://raw.githubusercontent.com/Sarvamm/st-themer/refs/heads/main/assets/Snapshot_1.png)
+![one](https://raw.githubusercontent.com/Sarvamm/st-themer/refs/heads/main/assets/Snapshot_2.png)
+![one](https://raw.githubusercontent.com/Sarvamm/st-themer/refs/heads/main/assets/Snapshot_3.png)
+![one](https://raw.githubusercontent.com/Sarvamm/st-themer/refs/heads/main/assets/Snapshot_4.png)
 
-## 🛠️ How It Works
-
-- The user selects color values using Streamlit’s `color_picker`.
-- Pressing **Apply** updates `.streamlit/config.toml` instantly and reruns the app.
-- Pressing **Save Preset** stores the selected colors in a TOML file at:
-  ```
-  Saved_Themes/<preset_name>/config.toml
-  ```
-  Example content:
-  ```toml
-  primaryColor = "#ff4b4b"
-  backgroundColor = "#0e1117"
-  secondaryBackgroundColor = "#262730"
-  textColor = "#fafafa"
-  ```
-
----
 
 
 ## 📜 License
